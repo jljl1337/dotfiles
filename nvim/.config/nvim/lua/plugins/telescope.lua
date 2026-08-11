@@ -11,7 +11,13 @@ return {
             find_files = {
                 hidden = true,
                 file_ignore_patterns = { ".git/", "node_modules/" },
-            }
+            },
+            live_grep = {
+                file_ignore_patterns = { 'node_modules', '.git', '.venv' },
+                additional_args = function(_)
+                    return { "--hidden" }
+                end
+            },
         }
     }
 }
