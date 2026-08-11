@@ -40,6 +40,16 @@ alias lt='eza --tree --icons'
 alias nv='nvim'
 alias nvr='nvim -M'
 
+# tm, attach (and create) to a session, if not specify, attach to default
+tm() {
+    if [ -z "$1" ]; then
+        tmux new-session -A -s default
+    else
+        tmux new-session -A -s "$1"
+    fi
+}
+alias tmls='tmux ls'
+
 # general
 export VISUAL='nv'
 export EDITOR='$VISUAL'
