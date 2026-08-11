@@ -6,4 +6,12 @@ return {
         -- optional but recommended
         { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
     },
+    opts = {
+        pickers = {
+            find_files = {
+                hidden = true,
+                file_ignore_patterns = { ".git/", "node_modules/" },
+            }
+        }
+    }
 }
