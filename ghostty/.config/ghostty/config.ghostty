@@ -1,5 +1,7 @@
-background = 121212
+background = 0e1118
 window-width = 80
 window-height = 25
 window-position-x = 1000
 window-position-y = 500
+cursor-style-blink = false
+shell-integration-features = ssh-env,ssh-terminfo
