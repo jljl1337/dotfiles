@@ -49,7 +49,14 @@ vim.keymap.set('n', '[d', function() vim.diagnostic.jump({ count = -1, float = t
 
 -- keymaps when tree is focus are managed in the plugin file as it open other
 -- files after pressing l when editing file
-vim.keymap.set('n', '<leader>e', require('nvim-tree.api').tree.focus)
+vim.keymap.set('n', '<leader>e', function()
+    local api = require('nvim-tree.api')
+    if api.tree.is_tree_buf() then
+        api.tree.close()
+    else
+        api.tree.focus()
+    end
+end, { desc = 'Toggle/Focus nvim-tree' })
 
 -- Lazy
 vim.keymap.set("n", "<leader>l", "<cmd>Lazy<cr>", { desc = "Open Lazy" })

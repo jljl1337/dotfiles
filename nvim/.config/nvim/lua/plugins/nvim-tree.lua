@@ -17,7 +17,7 @@ return {
                 end
 
                 -- load the default mappings first (optional but recommended)
-                api.config.mappings.default_on_attach(bufnr)
+                api.map.on_attach.default(bufnr)
 
                 -- then override/add your own, scoped to this buffer only
                 vim.keymap.set('n', 'l', api.node.open.edit, opts('Open'))
@@ -26,6 +26,9 @@ return {
 
             require('nvim-tree').setup({
                 on_attach = on_attach,
+                filters = {
+                    custom = { "^\\.git$" },
+                },
                 actions = {
                     change_dir = {
                         enable = true,
