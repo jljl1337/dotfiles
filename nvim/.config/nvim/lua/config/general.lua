@@ -28,10 +28,5 @@ vim.opt.colorcolumn = "80"
 vim.opt.spell = true
 vim.opt.spelllang = { "en" }
 
--- Auto close reference window
-vim.api.nvim_create_autocmd("FileType", {
-    pattern = "qf",
-    callback = function()
-        vim.keymap.set("n", "<CR>", "<CR>:cclose<CR>", { buffer = true, silent = true })
-    end,
-})
+-- Vertical split open on the right
+vim.opt.splitright = true
