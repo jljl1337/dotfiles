@@ -65,8 +65,8 @@ vim.keymap.set("n", "<leader>l", "<cmd>Lazy<cr>", { desc = "Open Lazy" })
 vim.keymap.set("n", "<leader>m", "<cmd>Mason<cr>", { desc = "Open Mason" })
 
 -- telescope
-vim.keymap.set('n', '<leader>f', require('telescope.builtin').find_files, { desc = 'Telescope find files' })
-vim.keymap.set('n', '<leader>g', require('telescope.builtin').live_grep, { desc = 'Telescope live grep' })
+vim.keymap.set('n', '<leader>ff', require('telescope.builtin').find_files, { desc = 'Telescope find files' })
+vim.keymap.set('n', '<leader>fg', require('telescope.builtin').live_grep, { desc = 'Telescope live grep' })
 
 -- Lsp
 vim.keymap.set("n", "gd", require("definition-or-references").definition_or_references, { silent = true })
