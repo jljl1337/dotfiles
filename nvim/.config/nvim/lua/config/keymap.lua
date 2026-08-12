@@ -11,13 +11,17 @@ vim.keymap.set("n", "<", "<<")
 vim.keymap.set("n", ">", ">>")
 
 -- Remove highlight after search in file
-vim.keymap.set('n', '<leader>/', '<cmd>nohlsearch<CR>')
+vim.keymap.set('n', '<leader><esc>', '<cmd>nohlsearch<CR>')
 
 -- Navigate splits seamlessly using Ctrl + h/j/k/l
 vim.keymap.set('n', '<C-h>', '<C-w>h', { desc = 'Move to left split' })
 vim.keymap.set('n', '<C-j>', '<C-w>j', { desc = 'Move to bottom split' })
 vim.keymap.set('n', '<C-k>', '<C-w>k', { desc = 'Move to top split' })
 vim.keymap.set('n', '<C-l>', '<C-w>l', { desc = 'Move to right split' })
+
+-- Toggle comment
+vim.keymap.set('n', '<leader>/', 'gcc', { remap = true, desc = 'Toggle comment (line)' })
+vim.keymap.set('v', '<leader>/', 'gc', { remap = true, desc = 'Toggle comment (selection)' })
 
 -- Using <leader> + 1..9 to navigate
 local function focus_window(n)
