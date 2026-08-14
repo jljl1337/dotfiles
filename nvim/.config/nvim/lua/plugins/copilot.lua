@@ -19,6 +19,7 @@ return {
                     end
                     return true
                 end,
+                env = false,
                 ["*"] = true,
             },
         })
