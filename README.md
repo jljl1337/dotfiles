@@ -1,6 +1,6 @@
 # dotfiles
 
-![GitHub License](https://img.shields.io/github/license/jljl1337/dotfiles)
+[![GitHub License](https://img.shields.io/github/license/jljl1337/dotfiles?label=License)](https://github.com/jljl1337/dotfiles/blob/main/LICENSE)
 
 ## Requirement
 
