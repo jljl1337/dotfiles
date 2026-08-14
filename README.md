@@ -2,6 +2,8 @@
 
 [![GitHub License](https://img.shields.io/github/license/jljl1337/dotfiles?label=License)](https://github.com/jljl1337/dotfiles/blob/main/LICENSE)
 
+My development environment configuration files.
+
 ## Requirement
 
 ### macOS with Homebrew
