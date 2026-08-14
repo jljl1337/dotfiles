@@ -12,7 +12,7 @@ machine with `git`.
 Install the required CLI apps:
 
 ```sh
-brew install stow starship eza fzf tmux nvim ripgrep
+brew install stow starship eza fzf tmux neovim ripgrep
 ```
 
 Install the required GUI apps:
@@ -26,7 +26,7 @@ brew install --cask ghostty
 Install the required CLI apps:
 
 ```sh
-sudo apt install stow eza fzf tmux vim nvim ripgrep
+sudo apt install stow eza fzf tmux vim neovim ripgrep
 curl -sS https://starship.rs/install.sh | sh
 ```
 
