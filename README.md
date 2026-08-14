@@ -11,6 +11,7 @@ My development environment configuration files.
 Install the required CLI apps:
 
 ```sh
+brew update
 brew install git stow starship eza fzf tmux neovim ripgrep
 ```
 
@@ -25,8 +26,18 @@ brew install --cask ghostty
 Install the required CLI apps:
 
 ```sh
-sudo apt install git stow eza fzf tmux vim neovim ripgrep
+sudo apt update
+sudo apt install git stow fzf tmux vim neovim ripgrep
 curl -sS https://starship.rs/install.sh | sh
+
+# eza, from https://github.com/eza-community/eza/blob/main/INSTALL.md
+sudo apt install -y gpg
+sudo mkdir -p /etc/apt/keyrings
+wget -qO- https://raw.githubusercontent.com/eza-community/eza/main/deb.asc | sudo gpg --dearmor -o /etc/apt/keyrings/gierens.gpg
+echo "deb [signed-by=/etc/apt/keyrings/gierens.gpg] http://deb.gierens.de stable main" | sudo tee /etc/apt/sources.list.d/gierens.list
+sudo chmod 644 /etc/apt/keyrings/gierens.gpg /etc/apt/sources.list.d/gierens.list
+sudo apt update
+sudo apt install -y eza
 ```
 
 Install the required GUI apps:
