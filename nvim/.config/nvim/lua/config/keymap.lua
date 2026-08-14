@@ -97,10 +97,14 @@ vim.keymap.set('x', 'K', ":m '<-2<CR>gv=gv", { silent = true })
 -- files after pressing l when editing file
 vim.keymap.set('n', '<leader>e', function()
     local api = require('nvim-tree.api')
-    if api.tree.is_tree_buf() then
+    local view = require('nvim-tree.view')
+
+    -- If nvim-tree thinks it's open but the window isn't actually valid,
+    -- its state is desynced (e.g. from session restore) — force a fresh open.
+    if view.is_visible() and api.tree.is_tree_buf() then
         api.tree.close()
     else
-        api.tree.focus()
+        api.tree.open() -- open() re-initializes more reliably than focus()
     end
 end, { desc = 'Toggle/Focus nvim-tree' })
 vim.keymap.set('n', '<leader>ft', ':NvimTreeFindFile<CR>', { silent = true })
