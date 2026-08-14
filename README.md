@@ -1,5 +1,7 @@
 # dotfiles
 
+![GitHub License](https://img.shields.io/github/license/jljl1337/dotfiles)
+
 ## Requirement
 
 Assuming `git` is already installed, and this repository is cloned to the
