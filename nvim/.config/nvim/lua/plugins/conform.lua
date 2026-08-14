@@ -50,7 +50,7 @@ return {
         formatters = {
             ["goimports-reviser"] = {
                 prepend_args = {
-                    "-rm-unused",
+                    -- "-rm-unused",
                     "-set-alias",
                 },
             },
