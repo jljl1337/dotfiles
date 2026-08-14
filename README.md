@@ -4,15 +4,12 @@
 
 ## Requirement
 
-Assuming `git` is already installed, and this repository is cloned to the
-machine with `git`.
-
 ### macOS with Homebrew
 
 Install the required CLI apps:
 
 ```sh
-brew install stow starship eza fzf tmux neovim ripgrep
+brew install git stow starship eza fzf tmux neovim ripgrep
 ```
 
 Install the required GUI apps:
@@ -26,7 +23,7 @@ brew install --cask ghostty
 Install the required CLI apps:
 
 ```sh
-sudo apt install stow eza fzf tmux vim neovim ripgrep
+sudo apt install git stow eza fzf tmux vim neovim ripgrep
 curl -sS https://starship.rs/install.sh | sh
 ```
 
@@ -38,15 +35,19 @@ Install the required GUI apps:
 
 ## Usage
 
-### 
+First, clone this repository, the location does *not* matter:
 
-Syncing all the dotfiles:
+```sh
+git clone https://github.com/jljl1337/dotfiles.git && cd dotfiles
+```
+
+Syncing all the dotfiles by creating symlinks with `stow`:
 
 ```sh
 stow -R */
 ```
 
-Unlinking all the dotfiles:
+When troubleshooting, you can remove all the symlinks with:
 
 ```sh
 stow -D */
