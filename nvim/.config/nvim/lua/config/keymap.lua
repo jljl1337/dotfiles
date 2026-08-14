@@ -80,13 +80,19 @@ vim.keymap.set("n", "<leader>Q", ":qa!<CR>")
 vim.keymap.set({ "n", "x" }, "c", '"_c')
 vim.keymap.set({ "n", "x" }, "C", '"_C')
 
+-- Simulate Alt + up/down arrow with J/K in visual line mode
+vim.keymap.set('x', 'J', ":m '>+1<CR>gv=gv", { silent = true })
+vim.keymap.set('x', 'K', ":m '<-2<CR>gv=gv", { silent = true })
+
 -- Plugins keymaps
 
 -- The keymaps of the following plugins are configured in their corresponding
 -- file:
 --
 -- nvim-cmp (auto complete)
+-- copilot (AI code completion)
 
+-- nvim-tree
 -- keymaps when tree is focus are managed in the plugin file as it open other
 -- files after pressing l when editing file
 vim.keymap.set('n', '<leader>e', function()
@@ -97,6 +103,7 @@ vim.keymap.set('n', '<leader>e', function()
         api.tree.focus()
     end
 end, { desc = 'Toggle/Focus nvim-tree' })
+vim.keymap.set('n', '<leader>ft', ':NvimTreeFindFile<CR>', { silent = true })
 
 -- Lazy
 vim.keymap.set("n", "<leader>l", "<cmd>Lazy<cr>", { desc = "Open Lazy" })
