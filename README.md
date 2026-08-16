@@ -2,65 +2,131 @@
 
 [![GitHub License](https://img.shields.io/github/license/jljl1337/dotfiles?label=License)](https://github.com/jljl1337/dotfiles/blob/main/LICENSE)
 
-My development environment configuration files.
+My development environment configuration in macOS and Linux.
 
 ## Requirement
 
-### macOS with Homebrew
+These are needed before syncing all the dotfiles:
 
-Install the required CLI apps:
+1. `zsh`
+2. `git`
+3. `devbox`
 
-```sh
-brew update
-brew install git stow starship eza fzf tmux neovim ripgrep
+### `zsh` and `git`: macOS
+
+Since `zsh` is the default shell of macOS, only `git` is required to install:
+
+```
+git --version
 ```
 
-Install the required GUI apps:
+Running `git` in the terminal will prompt to install it if not yet done so.
+
+### `zsh` and `git`: Ubuntu
+
+Install both with `apt`:
 
 ```sh
-brew install --cask ghostty
+sudo apt update && sudo apt install -y zsh git
 ```
 
-### Ubuntu with apt
-
-Install the required CLI apps:
+Set `zsh` as the default shell:
 
 ```sh
-sudo apt update
-sudo apt install git stow fzf tmux vim neovim ripgrep
-curl -sS https://starship.rs/install.sh | sh
-
-# eza, from https://github.com/eza-community/eza/blob/main/INSTALL.md
-sudo apt install -y gpg
-sudo mkdir -p /etc/apt/keyrings
-wget -qO- https://raw.githubusercontent.com/eza-community/eza/main/deb.asc | sudo gpg --dearmor -o /etc/apt/keyrings/gierens.gpg
-echo "deb [signed-by=/etc/apt/keyrings/gierens.gpg] http://deb.gierens.de stable main" | sudo tee /etc/apt/sources.list.d/gierens.list
-sudo chmod 644 /etc/apt/keyrings/gierens.gpg /etc/apt/sources.list.d/gierens.list
-sudo apt update
-sudo apt install -y eza
+chsh -s $(which zsh)
 ```
 
-Install the required GUI apps:
+Exit and reopen/reconnect if needed.
+
+### `devbox`
+
+Install `devbox`:
+
+```
+curl -fsSL https://get.jetify.com/devbox | bash
+```
+
+Add the `PATH` from devbox to the current shell temporarily, modifying the
+`.zshrc` is not required as it is included in the `zsh` baseline file.
+
+Run this following command:
+
+```
+. <(devbox global shellenv --init-hook)
+```
+
+## Setup
+
+### `devbox`
+
+Clone this repository, the location does *not* matter. Note that changing the
+remote URL can be skipped if not going to push in the future.
+
+Run this following command:
 
 ```sh
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/mkasberg/ghostty-ubuntu/HEAD/install.sh)"
+git clone https://github.com/jljl1337/dotfiles.git
+cd dotfiles
+git remote set-url origin git@github.com:jljl1337/dotfiles.git
+```
+Syncing all dotfiles required `stow`, so install it first along with other
+packages using `devbox`.
+
+Copy `devbox` files to global default directory temporarily:
+
+```
+mkdir -p ~/.local/share/devbox/global/default
+cp -a ./devbox/.local/share/devbox/global/default/. ~/.local/share/devbox/global/default/
+```
+
+Install all packages:
+
+```
+devbox global install
+```
+
+### First Sync with `stow`
+
+Sync once with `--adopt` to avoid conflict error since the `devbox` files are
+copied to the home directory:
+
+```
+stow --adopt -R */
+```
+
+### Untracked Configuration
+
+Add this line to the bottom of `~/.zshrc`:
+
+```
+source ~/.config/zsh/baseline.zsh
 ```
 
 ## Usage
 
-First, clone this repository, the location does *not* matter:
+### `devbox`: Package Management
 
-```sh
-git clone https://github.com/jljl1337/dotfiles.git && cd dotfiles
+Add global package:
+
+```
+devbox global add <package>
 ```
 
-Syncing all the dotfiles by creating symlinks with `stow`:
+Remove global package:
+
+```
+devbox global rm <package>
+```
+
+### `stow`: Symlink Management
+
+Sync all the dotfiles by creating symlinks with `stow`:
 
 ```sh
 stow -R */
 ```
 
-When troubleshooting, you can remove all the symlinks with:
+When troubleshooting, remove all the symlinks:
 
 ```sh
 stow -D */
