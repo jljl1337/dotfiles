@@ -1,1 +1,3 @@
 --target=~
+--ignore=\.log$
+--ignore=DS_Store
