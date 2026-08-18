@@ -9,7 +9,8 @@
     "neovim@latest",
     "ripgrep@latest",
     "eza@latest",
-    "starship@latest"
+    "starship@latest",
+    "nodejs@latest"
   ],
   "shell": {
     "init_hook": [
