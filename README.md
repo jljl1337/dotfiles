@@ -64,14 +64,8 @@ Install `devbox`:
 curl -fsSL https://get.jetify.com/devbox | bash
 ```
 
-Add the `PATH` from devbox to the current shell temporarily, modifying the
-`.zshrc` is not required as it is included in the `zsh` baseline file.
-
-Run this following command:
-
-```
-. <(devbox global shellenv --init-hook)
-```
+Modifying the `.zshrc` to include binary `PATH` from `devbox` is not required
+as the integration will be included in the `zsh` baseline file.
 
 ## Setup
 
@@ -103,6 +97,12 @@ Install all packages:
 devbox global install
 ```
 
+Add the `PATH` for binaries from devbox to the current shell temporarily:
+
+```
+. <(devbox global shellenv --init-hook)
+```
+
 ### First Sync with `stow`
 
 Sync once with `--adopt` to avoid conflict error since the `devbox` files are
@@ -110,6 +110,12 @@ copied to the home directory:
 
 ```
 stow --adopt -R */
+```
+
+Check if any dotfiles are modified:
+
+```
+git status
 ```
 
 ### Untracked Configuration
