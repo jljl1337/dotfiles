@@ -10,7 +10,8 @@ These are needed before syncing all the dotfiles:
 
 1. `zsh`
 2. `git`
-3. `devbox`
+3. SSH key setup (optional if not pushing to the repository)
+4. `devbox`
 
 ### `zsh` and `git`: macOS
 
@@ -37,6 +38,23 @@ chsh -s $(which zsh)
 ```
 
 Exit and reopen/reconnect if needed.
+
+### SSH Key Setup
+
+Generate an SSH key if you don't have one yet, make sure that the public key is
+located in `~/.ssh/id_ed25519.pub` with the default settings.
+
+Run the following command:
+
+```
+ssh-keygen -t ed25519
+```
+
+Print the public key to the terminal and upload it to your git provider:
+
+```
+cat ~/.ssh/id_ed25519.pub
+```
 
 ### `devbox`
 
@@ -100,6 +118,14 @@ Add this line to the bottom of `~/.zshrc`:
 
 ```
 source ~/.config/zsh/baseline.zsh
+```
+
+Create a new file `~/.gitconfig.local` and add the following content:
+
+```
+[user]
+    name = <your name>
+    email = <your email>
 ```
 
 ## Usage
