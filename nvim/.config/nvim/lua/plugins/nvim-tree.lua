@@ -36,6 +36,10 @@ return {
                         restrict_above_cwd = true, -- Disables browsing paths above your current workspace
                     },
                 },
+                git = {
+                    enable = true,
+                    ignore = false,
+                }
             })
         end,
     },

@@ -116,8 +116,16 @@ vim.keymap.set("n", "<leader>l", "<cmd>Lazy<cr>", { desc = "Open Lazy" })
 vim.keymap.set("n", "<leader>m", "<cmd>Mason<cr>", { desc = "Open Mason" })
 
 -- telescope
-vim.keymap.set('n', '<leader>ff', require('telescope.builtin').find_files, { desc = 'Telescope find files' })
-vim.keymap.set('n', '<leader>fg', require('telescope.builtin').live_grep, { desc = 'Telescope live grep' })
+vim.keymap.set('n', '<leader>ff', ':Telescope find_files<cr>', { desc = 'Telescope find files' })
+vim.keymap.set('n', '<leader>fF', ':Telescope find_files no_ignore=true<cr>', { desc = 'Telescope find files (including gitignored files)' })
+vim.keymap.set('n', '<leader>fg', ':Telescope live_grep<cr>', { desc = 'Telescope live grep' })
+vim.keymap.set('n', '<leader>fG', function()
+    require("telescope.builtin").live_grep({
+        additional_args = function()
+            return { "--no-ignore", "--hidden" }
+        end,
+    })
+end, { desc = 'Telescope live grep (including gitignored files)' })
 
 -- Lspsaga
 vim.keymap.set('n', ']d', "<cmd>Lspsaga diagnostic_jump_prev<CR>")
