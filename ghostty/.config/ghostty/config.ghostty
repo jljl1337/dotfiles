@@ -8,4 +8,4 @@ shell-integration-features = ssh-env,ssh-terminfo
 font-feature = -calt
 font-feature = -liga
 font-feature = -dlig
-clipboard-paste-protection = false
+clipboard-read = allow
