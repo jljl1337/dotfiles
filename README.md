@@ -64,22 +64,15 @@ Install `devbox`:
 curl -fsSL https://get.jetify.com/devbox | bash
 ```
 
-Modifying the `.zshrc` to include binary `PATH` from `devbox` is not required
-as the integration will be included in the `zsh` baseline file.
-
 ## Setup
 
 ### `devbox`
 
-Clone this repository, the location does *not* matter. Note that changing the
-remote URL can be skipped if not going to push in the future.
-
-Run this following command:
+Clone this repository, the location does *not* matter:
 
 ```sh
-git clone https://github.com/jljl1337/dotfiles.git
+git clone git@github.com:jljl1337/dotfiles.git
 cd dotfiles
-git remote set-url origin git@github.com:jljl1337/dotfiles.git
 ```
 Syncing all dotfiles required `stow`, so install it first along with other
 packages using `devbox`.
@@ -96,6 +89,9 @@ Install all packages:
 ```
 devbox global install
 ```
+
+Modifying the `.zshrc` to include binary `PATH` from `devbox` is not required
+as the integration will be included in the `zsh` baseline file.
 
 Add the `PATH` for binaries from devbox to the current shell temporarily:
 
