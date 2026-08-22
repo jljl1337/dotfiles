@@ -23,12 +23,12 @@ git --version
 
 Running `git` in the terminal will prompt to install it if not yet done so.
 
-### `zsh` and `git`: Ubuntu
+### `zsh` and `git`: Fedora
 
-Install both with `apt`:
+Install both with `dnf`:
 
 ```sh
-sudo apt update && sudo apt install -y zsh git
+sudo dnf install zsh git -y
 ```
 
 Set `zsh` as the default shell:
@@ -74,6 +74,7 @@ Clone this repository, the location does *not* matter:
 git clone git@github.com:jljl1337/dotfiles.git
 cd dotfiles
 ```
+
 Syncing all dotfiles required `stow`, so install it first along with other
 packages using `devbox`.
 
