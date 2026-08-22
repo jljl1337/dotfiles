@@ -39,7 +39,10 @@ return {
                 git = {
                     enable = true,
                     ignore = false,
-                }
+                },
+                sort = {
+                    sorter = "extension", -- Options: "case_sensitive", "modification_time", "extension", or a custom function
+                },
             })
         end,
     },
