@@ -50,10 +50,6 @@ tm() {
 }
 alias tmls='tmux ls'
 
-# general
-export VISUAL='nv'
-export EDITOR='$VISUAL'
-
 # History
 HISTSIZE=1000
 HISTFILE=~/.zsh_history
@@ -78,3 +74,6 @@ export HOMEBREW_NO_INSTALL_CLEANUP=TRUE
 
 export DOCKER_DEFAULT_PLATFORM=linux/amd64
 
+# general
+export VISUAL="$(which nvim)"
+export EDITOR="$(which nvim)"
