@@ -33,6 +33,8 @@ bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 
 # aliases
+alias kssh='kitten ssh'
+
 alias ll='eza -lh --git --icons=auto'
 alias la='eza -lah --git --icons=auto'
 alias lt='eza --tree --icons'
@@ -40,10 +42,16 @@ alias lt='eza --tree --icons'
 alias nv='nvim'
 alias nvr='nvim -M'
 
-# tm, attach (and create) to a session, if not specify, attach to default
+# tm, attach (and create) to a session, if not specify, attach to by the name
+# of the current directory, if the current directory is at the root, attach to
+# a session named "root"
 tm() {
     if [ -z "$1" ]; then
-        tmux new-session -A -s default
+        session_name=$(basename "$PWD")
+        if [ "$session_name" = "/" ]; then
+            session_name="root"
+        fi
+        tmux new-session -A -s "$session_name"
     else
         tmux new-session -A -s "$1"
     fi
