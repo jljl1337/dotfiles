@@ -10,7 +10,8 @@
     "ripgrep@latest",
     "eza@latest",
     "starship@latest",
-    "nodejs@latest"
+    "nodejs@latest",
+    "btop@latest"
   ],
   "shell": {
     "init_hook": [
