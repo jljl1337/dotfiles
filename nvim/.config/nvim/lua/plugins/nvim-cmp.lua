@@ -14,6 +14,14 @@ return {
             local luasnip = require("luasnip")
 
             cmp.setup({
+                window = {
+                    completion = cmp.config.window.bordered({
+                        border = "rounded",
+                    }),
+                    documentation = cmp.config.window.bordered({
+                        border = "rounded",
+                    }),
+                },
                 snippet = {
                     expand = function(args)
                         luasnip.lsp_expand(args.body)
