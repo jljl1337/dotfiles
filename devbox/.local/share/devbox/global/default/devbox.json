@@ -12,7 +12,10 @@
     "starship@latest",
     "nodejs@latest",
     "btop@latest",
-    "typos-lsp@latest"
+    "typos-lsp@latest",
+    "yaml-language-server@latest",
+    "vscode-json-languageserver@latest",
+    "lua-language-server@latest"
   ],
   "shell": {
     "init_hook": [

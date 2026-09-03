@@ -11,8 +11,39 @@ return {
             })
 
             -- Per-server settings
+
+            -- Spell checking
             vim.lsp.enable("typos_lsp")
 
+            -- JSON schema support
+            vim.lsp.config("jsonls", {
+                settings = {
+                    json = {
+                        schemas = require('schemastore').json.schemas(),
+                        validate = { enable = true },
+                    },
+                },
+            })
+            vim.lsp.enable("jsonls")
+
+            -- YAML schema support
+            vim.lsp.config("yamlls", {
+                settings = {
+                    yaml = {
+                        schemaStore = {
+                            -- You must disable built-in schemaStore support if you want to use
+                            -- this plugin and its advanced options like `ignore`.
+                            enable = false,
+                            -- Avoid TypeError: Cannot read properties of undefined (reading 'length')
+                            url = "",
+                        },
+                        schemas = require('schemastore').yaml.schemas(),
+                    },
+                },
+            })
+            vim.lsp.enable("yamlls")
+
+            -- Lua
             vim.lsp.config("lua_ls", {
                 settings = {
                     Lua = {
@@ -26,7 +57,9 @@ return {
                     },
                 },
             })
+            vim.lsp.enable("lua_ls")
 
+            -- Python
             vim.lsp.config("pyright", {
                 settings = {
                     python = {
@@ -38,18 +71,9 @@ return {
                     },
                 },
             })
+            vim.lsp.enable("pyright")
 
-            vim.lsp.config("rust_analyzer", {
-                settings = {
-                    ["rust-analyzer"] = {
-                        cargo = { allFeatures = true },
-                        checkOnSave = { command = "clippy" },
-                    },
-                },
-            })
-
-            vim.lsp.config("ts_ls", {})
-
+            -- Golang
             vim.lsp.config("gopls", {
                 settings = {
                     gopls = {
@@ -58,10 +82,7 @@ return {
                     },
                 },
             })
-
-            vim.lsp.config("clangd", {
-                cmd = { "clangd", "--background-index", "--clang-tidy" },
-            })
+            vim.lsp.enable("gopls")
         end,
     },
 }
