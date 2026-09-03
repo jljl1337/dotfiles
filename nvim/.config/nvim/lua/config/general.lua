@@ -16,6 +16,22 @@ vim.opt.smartcase = true
 vim.opt.ignorecase = true
 
 -- Copy and paste from or to system clipboard
+local function local_paste()
+  return { vim.fn.split(vim.fn.getreg('"'), "\n"), vim.fn.getregtype('"') }
+end
+
+vim.g.clipboard = {
+  name = "OSC52 (write-only)",
+  copy = {
+    ["+"] = require("vim.ui.clipboard.osc52").copy("+"),
+    ["*"] = require("vim.ui.clipboard.osc52").copy("*"),
+  },
+  paste = {
+    ["+"] = local_paste,
+    ["*"] = local_paste,
+  },
+}
+
 vim.opt.clipboard = "unnamedplus"
 
 -- Syntax highlighting
