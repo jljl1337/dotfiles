@@ -24,9 +24,5 @@ vim.cmd("syntax on")
 -- Vertical line for length marker
 vim.opt.colorcolumn = "80"
 
--- Spelling check
-vim.opt.spell = true
-vim.opt.spelllang = { "en" }
-
 -- Vertical split open on the right
 vim.opt.splitright = true
