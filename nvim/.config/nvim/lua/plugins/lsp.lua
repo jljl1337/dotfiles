@@ -11,6 +11,8 @@ return {
             })
 
             -- Per-server settings
+            vim.lsp.enable("typos_lsp")
+
             vim.lsp.config("lua_ls", {
                 settings = {
                     Lua = {

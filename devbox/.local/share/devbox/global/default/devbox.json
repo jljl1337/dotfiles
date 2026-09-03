@@ -11,7 +11,8 @@
     "eza@latest",
     "starship@latest",
     "nodejs@latest",
-    "btop@latest"
+    "btop@latest",
+    "typos-lsp@latest"
   ],
   "shell": {
     "init_hook": [

@@ -506,6 +506,44 @@
         }
       }
     },
+    "typos-lsp@latest": {
+      "last_modified": "2026-08-27T07:16:00Z",
+      "resolved": "github:NixOS/nixpkgs/c27cdad491a991b11ed731760aa2ef8db0cb0410#typos-lsp",
+      "source": "devbox-search",
+      "version": "0.1.55",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/2aavz6jkbyqzwphnbr697dk9igh8zbrr-typos-lsp-0.1.55",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/2aavz6jkbyqzwphnbr697dk9igh8zbrr-typos-lsp-0.1.55"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/5kf2pkxp3mzabra70h1qrzpj2wzlrs3j-typos-lsp-0.1.55",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/5kf2pkxp3mzabra70h1qrzpj2wzlrs3j-typos-lsp-0.1.55"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/338glf6xm06hvaqx6k6d4vaiqvjw0q1q-typos-lsp-0.1.55",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/338glf6xm06hvaqx6k6d4vaiqvjw0q1q-typos-lsp-0.1.55"
+        }
+      }
+    },
     "vim@latest": {
       "last_modified": "2026-08-01T16:34:20Z",
       "resolved": "github:NixOS/nixpkgs/a5cbcfe954791221bfffe2307f7d1a1bf61a871e#vim",
