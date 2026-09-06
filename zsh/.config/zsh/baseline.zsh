@@ -35,9 +35,11 @@ bindkey '^n' history-search-forward
 # aliases
 alias kssh='kitten ssh'
 
-alias ll='eza -lh --git --icons=auto'
-alias la='eza -lah --git --icons=auto'
-alias lt='eza --tree --icons'
+alias ll='eza -lh --sort=type --git --icons=auto'
+alias la='eza -lah --sort=type --git --icons=auto'
+alias lt='eza --tree --sort=type --icons'
+alias lta='eza -a --tree --sort=type --icons'
+alias lat='lta'
 
 alias nv='nvim'
 alias nvr='nvim -M'
@@ -57,6 +59,8 @@ tm() {
     fi
 }
 alias tmls='tmux ls'
+alias tmk='tmux kill-session -t'
+alias tmka='tmux kill-server'
 
 # History
 HISTSIZE=1000
