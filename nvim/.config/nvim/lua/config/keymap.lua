@@ -117,7 +117,8 @@ vim.keymap.set("n", "<leader>m", "<cmd>Mason<cr>", { desc = "Open Mason" })
 
 -- telescope
 vim.keymap.set('n', '<leader>ff', ':Telescope find_files<cr>', { desc = 'Telescope find files' })
-vim.keymap.set('n', '<leader>fF', ':Telescope find_files no_ignore=true<cr>', { desc = 'Telescope find files (including gitignored files)' })
+vim.keymap.set('n', '<leader>fF', ':Telescope find_files no_ignore=true<cr>',
+    { desc = 'Telescope find files (including gitignored files)' })
 vim.keymap.set('n', '<leader>fg', ':Telescope live_grep<cr>', { desc = 'Telescope live grep' })
 vim.keymap.set('n', '<leader>fG', function()
     require("telescope.builtin").live_grep({
@@ -144,3 +145,6 @@ vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]], { desc = "Exit terminal mode" })
 
 -- Neogit
 vim.keymap.set("n", "<leader>gg", "<cmd>Neogit<cr>", { desc = "Show Neogit UI" })
+
+-- Flash
+vim.keymap.set("n", "<leader>z", function() require("flash").jump() end, { desc = "Flash" })
