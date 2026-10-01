@@ -146,5 +146,5 @@ vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]], { desc = "Exit terminal mode" })
 -- Neogit
 vim.keymap.set("n", "<leader>gg", "<cmd>Neogit<cr>", { desc = "Show Neogit UI" })
 
--- Flash
-vim.keymap.set("n", "<leader>z", function() require("flash").jump() end, { desc = "Flash" })
+-- Hop
+vim.keymap.set("n", "<leader>z", "<cmd>HopChar1<cr>", { desc = "Hop to character" })
