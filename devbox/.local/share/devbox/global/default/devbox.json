@@ -15,7 +15,8 @@
     "typos-lsp@latest",
     "yaml-language-server@latest",
     "vscode-json-languageserver@latest",
-    "lua-language-server@latest"
+    "lua-language-server@latest",
+    "opencode@latest"
   ],
   "shell": {
     "init_hook": [

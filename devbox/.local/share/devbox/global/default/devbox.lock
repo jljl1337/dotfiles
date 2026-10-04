@@ -305,7 +305,7 @@
     },
     "nodejs@latest": {
       "last_modified": "2026-08-06T00:10:29Z",
-      "plugin_version": "0.0.4",
+      "plugin_version": "0.0.5",
       "resolved": "github:NixOS/nixpkgs/70ce234312134a463ba7728e94da2486a1d237ac#nodejs_26",
       "source": "devbox-search",
       "version": "26.7.0",
@@ -339,6 +339,44 @@
             }
           ],
           "store_path": "/nix/store/jbr8baiszp449aacg17k0z59bs3v48as-nodejs-26.7.0"
+        }
+      }
+    },
+    "opencode@latest": {
+      "last_modified": "2026-09-29T03:29:29Z",
+      "resolved": "github:NixOS/nixpkgs/b6c8664de9b6cc07fe5666a29f91884ba81197c4#opencode",
+      "source": "devbox-search",
+      "version": "1.18.31",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/im1fjy2rfwlgcyrbma4m9drxsyn4wmqg-opencode-1.18.31",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/im1fjy2rfwlgcyrbma4m9drxsyn4wmqg-opencode-1.18.31"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/45y7a2ndk3d12147vymybn9x70hmzs0w-opencode-1.18.31",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/45y7a2ndk3d12147vymybn9x70hmzs0w-opencode-1.18.31"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/3vz1db1ha1pkpnxla195zvsfvjxcdgav-opencode-1.18.31",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/3vz1db1ha1pkpnxla195zvsfvjxcdgav-opencode-1.18.31"
         }
       }
     },
