@@ -130,8 +130,8 @@ end, { desc = 'Telescope live grep (including gitignored files)' })
 vim.keymap.set('n', '<leader>fd', ':Telescope diagnostics<cr>', { desc = 'Telescope diagnostics' })
 
 -- Lspsaga
-vim.keymap.set('n', ']d', "<cmd>Lspsaga diagnostic_jump_prev<CR>")
-vim.keymap.set('n', '[d', "<cmd>Lspsaga diagnostic_jump_next<CR>")
+vim.keymap.set('n', '[d', "<cmd>Lspsaga diagnostic_jump_prev<CR>")
+vim.keymap.set('n', ']d', "<cmd>Lspsaga diagnostic_jump_next<CR>")
 vim.keymap.set("n", "<leader>d", "<cmd>Lspsaga show_line_diagnostics<CR>")
 vim.keymap.set("n", "<leader>a", "<cmd>Lspsaga code_action<CR>")
 vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>")
