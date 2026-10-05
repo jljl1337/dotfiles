@@ -127,6 +127,7 @@ vim.keymap.set('n', '<leader>fG', function()
         end,
     })
 end, { desc = 'Telescope live grep (including gitignored files)' })
+vim.keymap.set('n', '<leader>fd', ':Telescope diagnostics<cr>', { desc = 'Telescope diagnostics' })
 
 -- Lspsaga
 vim.keymap.set('n', ']d', "<cmd>Lspsaga diagnostic_jump_prev<CR>")
