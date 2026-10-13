@@ -255,6 +255,44 @@
         }
       }
     },
+    "mise@latest": {
+      "last_modified": "2026-10-08T19:21:32Z",
+      "resolved": "github:NixOS/nixpkgs/8edc0c72e3a38faf5434e40d1f19431125fe4b30#mise",
+      "source": "devbox-search",
+      "version": "2026.10.3",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/nf7990y6vn55xaq0rxy2gs7fad6884vm-mise-2026.10.3",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/nf7990y6vn55xaq0rxy2gs7fad6884vm-mise-2026.10.3"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/bhpk8f932jpr9zi110a3wg8xnw7xgdzx-mise-2026.10.3",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/bhpk8f932jpr9zi110a3wg8xnw7xgdzx-mise-2026.10.3"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/5az8ypfkhwawhznrhfw78r5zjccik8jz-mise-2026.10.3",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/5az8ypfkhwawhznrhfw78r5zjccik8jz-mise-2026.10.3"
+        }
+      }
+    },
     "neovim@latest": {
       "last_modified": "2026-08-01T16:34:20Z",
       "resolved": "github:NixOS/nixpkgs/a5cbcfe954791221bfffe2307f7d1a1bf61a871e#neovim",

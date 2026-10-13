@@ -16,7 +16,8 @@
     "yaml-language-server@latest",
     "vscode-json-languageserver@latest",
     "lua-language-server@latest",
-    "opencode@latest"
+    "opencode@latest",
+    "mise@latest"
   ],
   "shell": {
     "init_hook": [
