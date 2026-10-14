@@ -79,6 +79,7 @@ setopt hist_find_no_dups
 eval "$(devbox global shellenv --init-hook)"
 eval "$(starship init zsh)"
 source <(fzf --zsh)
+eval "$(mise activate zsh)"
 
 # Application settings
 export HOMEBREW_NO_AUTO_UPDATE=1
