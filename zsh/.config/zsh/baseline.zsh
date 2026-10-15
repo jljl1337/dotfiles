@@ -85,8 +85,6 @@ eval "$(mise activate zsh)"
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_INSTALL_CLEANUP=TRUE
 
-export DOCKER_DEFAULT_PLATFORM=linux/amd64
-
 # general
 export VISUAL="$(which nvim)"
 export EDITOR="$(which nvim)"
