@@ -17,19 +17,19 @@ vim.opt.ignorecase = true
 
 -- Copy and paste from or to system clipboard
 local function local_paste()
-  return { vim.fn.split(vim.fn.getreg('"'), "\n"), vim.fn.getregtype('"') }
+    return { vim.fn.split(vim.fn.getreg('"'), "\n"), vim.fn.getregtype('"') }
 end
 
 vim.g.clipboard = {
-  name = "OSC52 (write-only)",
-  copy = {
-    ["+"] = require("vim.ui.clipboard.osc52").copy("+"),
-    ["*"] = require("vim.ui.clipboard.osc52").copy("*"),
-  },
-  paste = {
-    ["+"] = local_paste,
-    ["*"] = local_paste,
-  },
+    name = "OSC52 (write-only)",
+    copy = {
+        ["+"] = require("vim.ui.clipboard.osc52").copy("+"),
+        ["*"] = require("vim.ui.clipboard.osc52").copy("*"),
+    },
+    paste = {
+        ["+"] = local_paste,
+        ["*"] = local_paste,
+    },
 }
 
 vim.opt.clipboard = "unnamedplus"
@@ -42,3 +42,6 @@ vim.opt.colorcolumn = "80"
 
 -- Vertical split open on the right
 vim.opt.splitright = true
+
+-- Auto update when files are changed outside of nvim
+vim.opt.autoread = true
