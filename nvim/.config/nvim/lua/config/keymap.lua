@@ -128,6 +128,9 @@ vim.keymap.set('n', '<leader>fG', function()
     })
 end, { desc = 'Telescope live grep (including gitignored files)' })
 vim.keymap.set('n', '<leader>fd', ':Telescope diagnostics<cr>', { desc = 'Telescope diagnostics' })
+vim.keymap.set('n', 'gd', ':Telescope lsp_definitions<cr>', { desc = 'Telescope LSP definitions' })
+vim.keymap.set('n', 'gf', ':Telescope lsp_references<cr>', { desc = 'Telescope LSP references' })
+vim.keymap.set('n', 'gi', ':Telescope lsp_implementations<cr>', { desc = 'Telescope LSP implementations' })
 
 -- Lspsaga
 vim.keymap.set('n', '[d', "<cmd>Lspsaga diagnostic_jump_prev<CR>")
@@ -135,8 +138,6 @@ vim.keymap.set('n', ']d', "<cmd>Lspsaga diagnostic_jump_next<CR>")
 vim.keymap.set("n", "<leader>d", "<cmd>Lspsaga show_line_diagnostics<CR>")
 vim.keymap.set("n", "<leader>a", "<cmd>Lspsaga code_action<CR>")
 vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>")
-vim.keymap.set("n", "gd", "<cmd>Lspsaga goto_definition<CR>")
-vim.keymap.set("n", "gf", "<cmd>Lspsaga finder<CR>")
 vim.keymap.set("n", "<leader>rn", "<cmd>Lspsaga rename<CR>")
 
 -- ToggleTerm
