@@ -145,6 +145,12 @@ vim.keymap.set("n", "<leader>t", "<cmd>ToggleTerm direction=float<cr>", { desc =
 -- Escape from terminal mode
 vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]], { desc = "Exit terminal mode" })
 
+-- GitSigns
+vim.keymap.set("n", "]h", "<cmd>Gitsigns next_hunk<cr>", { desc = "Next hunk" })
+vim.keymap.set("n", "[h", "<cmd>Gitsigns prev_hunk<cr>", { desc = "Previous hunk" })
+vim.keymap.set("n", "<leader>sh", "<cmd>Gitsigns stage_hunk<cr>", { desc = "Stage hunk" })
+vim.keymap.set("n", "<leader>ph", "<cmd>Gitsigns preview_hunk<cr>", { desc = "Preview hunk" })
+
 -- Neogit
 vim.keymap.set("n", "<leader>gg", "<cmd>Neogit<cr>", { desc = "Show Neogit UI" })
 
