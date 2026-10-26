@@ -22,6 +22,8 @@ return {
                 -- then override/add your own, scoped to this buffer only
                 vim.keymap.set('n', 'l', api.node.open.edit, opts('Open'))
                 vim.keymap.set('n', 'h', api.node.navigate.parent_close, opts('Close Directory'))
+                vim.keymap.set('n', '<C-r>', api.tree.reload, opts('Refresh'))
+                vim.keymap.set('n', 'r', api.fs.rename_sub, opts('Rename: Omit Filename'))
             end
 
             require('nvim-tree').setup({

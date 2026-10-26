@@ -31,7 +31,7 @@ local function focus_window(n)
         ['neo-tree'] = true,
         ['neo-tree-popup'] = true,
         minifiles = true,
-        oil = true,
+        -- oil = true,
     }
 
     local wins = vim.api.nvim_tabpage_list_wins(0)
@@ -67,8 +67,9 @@ for i = 1, 9 do
 end
 
 -- Save
-vim.keymap.set("n", "<C-s>", ":w ++p<CR>")
-vim.keymap.set("n", "<leader>s", ":wa ++p<CR>")
+vim.keymap.set("n", "<C-s>", ":w<CR>")
+vim.keymap.set("n", "<leader>s", ":w ++p<CR>")
+vim.keymap.set("n", "<leader>S", ":wa ++p<CR>")
 
 -- Quit
 vim.keymap.set("n", "<C-q>", ":q<CR>")
@@ -156,3 +157,7 @@ vim.keymap.set("n", "<leader>gg", "<cmd>Neogit<cr>", { desc = "Show Neogit UI" }
 
 -- Hop
 vim.keymap.set("n", "<leader>z", "<cmd>HopChar1<cr>", { desc = "Hop to character" })
+
+-- Oil
+-- keymaps when oil is focus are managed in the plugin file
+vim.keymap.set("n", "<leader>o", "<cmd>Oil<cr>", { desc = "Open Oil" })
