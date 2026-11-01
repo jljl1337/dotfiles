@@ -68,8 +68,8 @@ end
 
 -- Save
 vim.keymap.set("n", "<C-s>", ":w<CR>")
-vim.keymap.set("n", "<leader>s", ":w ++p<CR>")
-vim.keymap.set("n", "<leader>S", ":wa ++p<CR>")
+vim.keymap.set("n", "<leader>S", ":w ++p<CR>")
+vim.keymap.set("n", "<leader>s", ":wa ++p<CR>")
 
 -- Quit
 vim.keymap.set("n", "<C-q>", ":q<CR>")
